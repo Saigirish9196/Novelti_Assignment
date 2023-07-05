@@ -17,7 +17,7 @@ app.use(cookieParser())
 app.use(cors())
 mongoose.set('strictQuery', false);
 
-mongoose.connect('mongodb://127.0.0.1:27017/usersDBS')
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.imnaepp.mongodb.net/usersDBS`)
 .then(()=>console.log("connenct"))
 
 const blogRoute = require('./routes')
